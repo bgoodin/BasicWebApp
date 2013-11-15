@@ -88,6 +88,17 @@ public class SubscriberActionTest extends AbstractBaseActionTest<SubscriberActio
 		assertEquals("Unexpected email value", subscriber.getEmail(), SUBSCRIBER_EMAIL);
 		assertEquals("Unexpected resolution", SUBSCRIBER_REDIRECT, trip.getRedirectUrl());
 	}
+
+	@Test
+	public void should_delete() throws Exception {
+		trip.setParameter("subscriber.id", SUBSCRIBER_ID.toString());
+		trip.setParameter("subscriber.name", SUBSCRIBER_NAME);
+		trip.setParameter("subscriber.email", SUBSCRIBER_EMAIL);
+		trip.execute("delete");
+		verify(subscriberMapper).delete(subscriberArgumentCaptor.capture());
+		assertEquals("Unexpected resolution", SUBSCRIBER_REDIRECT, trip.getRedirectUrl());
+	}
+	
 	/* HELPERS */
 
 	private Subscriber getSubscriber() {

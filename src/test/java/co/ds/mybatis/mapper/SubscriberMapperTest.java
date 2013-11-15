@@ -8,6 +8,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 public class SubscriberMapperTest extends MapperTestBase {
 
@@ -30,6 +31,21 @@ public class SubscriberMapperTest extends MapperTestBase {
 	public void should_list() {
 		final List<Subscriber> subscriberList = subscriberMapper.list();
 		assertEquals("Subscriber list should contain 4 records", 4, subscriberList.size());
+	}
+
+	@Test
+	public void should_delete() {	
+		List<Subscriber> subscriberList = subscriberMapper.list();
+		assertEquals("Subscriber list should contain 4 records", 4, subscriberList.size());
+		
+		final Subscriber subscriberToDelete = subscriberList.get(0);
+		subscriberMapper.delete(subscriberToDelete);
+		
+		subscriberList = subscriberMapper.list();
+		assertEquals("Subscriber list should contain 3 records", 3, subscriberList.size());
+		
+		final Subscriber deletedSubscriber = subscriberMapper.fetch(subscriberToDelete.getId());
+		assertNull("Subscriber should have been deleted", deletedSubscriber);
 	}
 
 	@Test

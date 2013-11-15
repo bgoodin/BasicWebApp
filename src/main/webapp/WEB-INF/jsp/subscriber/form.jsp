@@ -46,6 +46,13 @@
 			<div class="button-bar">
 				<div class="box-right">
 					<stripes:submit name="save" value="Save" id="save-button"/>
+					<!-- this doesn't work :( 
+					<c:if test="${!subscriber.name.isEmpty()}">
+					-->
+						<stripes:submit name="delete" value="Delete" id="delete-button"/>
+					<!-- this doesn't work :( 
+					</c:if>
+					-->
 					<stripes:submit name="cancelForm" value="Cancel" id="cancel-button"/>
 				</div>
 				<div class="clear"></div>

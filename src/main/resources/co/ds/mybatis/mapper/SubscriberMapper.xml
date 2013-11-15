@@ -8,6 +8,10 @@
 		select id, name, email from subscriber where id = #{id}
 	</select>
 
+	<delete id="delete" parameterType="Subscriber">
+		delete from subscriber where id = #{id}
+	</delete>
+
 	<select id="list" resultType="Subscriber">
 		select id, name, email from subscriber order by id
 	</select>

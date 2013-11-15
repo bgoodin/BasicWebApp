@@ -26,14 +26,14 @@
 			<%--
 					Style Sheets
 			--%>
-		<link rel='stylesheet' type='text/css' href='/css/main.css?${appVersion}'/>
+		<link rel='stylesheet' type='text/css' href='css/main.css?${appVersion}'/>
 		<%@include file="/WEB-INF/jsp/includes/jqueryCss.jsp" %>
 		<stripes:layout-component name="html_head_css"/>
 			<%--
 					Scripts
 			--%>
 		<%@include file="/WEB-INF/jsp/includes/jquery.jsp" %>
-		<script type="text/javascript" src="/js/basic.js"></script>
+		<script type="text/javascript" src="js/basic.js"></script>
 		<stripes:layout-component name="html_head_js"/>
 	</head>
 	<body>
