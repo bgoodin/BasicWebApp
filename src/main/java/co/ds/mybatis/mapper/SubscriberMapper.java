@@ -13,4 +13,6 @@ public interface SubscriberMapper {
 	void update(Subscriber subscriber);
 
 	Subscriber fetch(Integer id);
+
+	void delete(Subscriber subscriber);
 }

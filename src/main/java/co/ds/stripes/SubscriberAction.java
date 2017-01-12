@@ -45,6 +45,11 @@ public class SubscriberAction extends BaseAction {
 		return form();
 	}
 
+	public Resolution delete() {
+		subscriberMapper.delete(subscriber);
+		return new RedirectResolution(SubscriberAction.class);
+	}
+
 	public Resolution form() {
 		return new ForwardResolution(FORM_FORWARD);
 	}

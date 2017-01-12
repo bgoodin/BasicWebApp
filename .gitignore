@@ -5,3 +5,7 @@ basicdb.log
 basicdb.properties
 basicdb.script
 basicdb.tmp
+/.settings
+/basicdb.lck
+/.classpath
+/.project
